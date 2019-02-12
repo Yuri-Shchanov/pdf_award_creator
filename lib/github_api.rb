@@ -8,6 +8,7 @@ module GithubAPI
       raise Exception.new('Invalid url') if repo.nil?
       contributors_url = URI("#{HOST}/repos/#{owner}/#{repo}/contributors")
       res = Net::HTTP.get_response contributors_url
+      raise Exception.new('Invalid url') if res.code != '200'
       body = JSON(res.body)
       # Так как гитхаб выводит список контрибьюторов уже отсортированным, опускаем сортировку
       body.collect{|c| c["login"]}.take(count)

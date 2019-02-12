@@ -15,6 +15,16 @@ body {
     font-size: 18px;
 }
 
+.error-message {
+    width: auto;
+    font-size: 20px;
+    background-color: #ff776d;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    color: #FFF;
+}
+
 .container {
     width: 75%;
     margin: auto;
