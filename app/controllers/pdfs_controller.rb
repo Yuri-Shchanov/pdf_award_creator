@@ -5,7 +5,8 @@ class PdfsController < ApplicationController
       format.pdf do
         render template: 'pdfs/show.html.erb',
                layout: 'pdf',
-               pdf: 'show'
+               pdf: 'show',
+               locals: {contributor: params[:contributor], number: params[:number]}
       end
     end
   end
