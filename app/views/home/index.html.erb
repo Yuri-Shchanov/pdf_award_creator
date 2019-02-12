@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="search-block">
+    <%= form_tag :search, enforce_utf8: false, method: :get do %>
+      <div class="search-input">
+        <%= text_field_tag :url, nil, required: true, class: "search-input-field", placeholder: 'Enter github repository url' %>
+      </div>
+      <div class="search-submit">
+        <%= submit_tag :Submit, name: nil %>
+      </div>
+    <% end %>
+  </div>
+</div>

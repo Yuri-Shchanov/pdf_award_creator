@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="search-block-inline">
+    <%= form_tag :search, enforce_utf8: false, method: :get do %>
+      <div class="search-input">
+        <%= text_field_tag :url, nil, required: true, class: "search-input-field", placeholder: 'Enter github repository url', value: params[:url] %>
+      </div>
+      <div class="search-submit">
+        <%= submit_tag :Submit, name: nil %>
+      </div>
+    <% end %>
+  </div>
+  <div class="contributors-table">
+    <% if @contributors.present? %>
+      <table>
+        <tbody>
+          <% @contributors.each_with_index do |contributor, index| %>
+            <tr>
+              <td class="contributor">
+                <%= contributor %>
+              </td>
+              <td>
+                <%= link_to 'download pdf', pdf_path(format: :pdf, contributor: contributor, number: index + 1) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="download-archive-link">
+        <%= link_to 'download archive', zip_pdf_path(format: :zip, url: params[:url]) %>
+      </div>
+    <% end %>
+  </div>
+</div>

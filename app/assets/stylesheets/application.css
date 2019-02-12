@@ -10,6 +10,72 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+body {
+    font-size: 18px;
+}
+
+.container {
+    width: 75%;
+    margin: auto;
+}
+
+.search-block, .search-block-inline {
+    width: 75%;
+    margin: 100px auto;
+}
+
+.contributors-table {
+    width: 75%;
+    margin: auto;
+}
+.contributors-table table{
+    margin: 20px 0;
+}
+
+.contributors-table .contributor {
+    width: 150px;
+}
+
+.search-block-inline .search-input {
+    width: 75%;
+    margin: 25px auto;
+    display: inline-block;
+}
+
+.search-block-inline .search-submit {
+    width: 24%;
+    margin: 25px auto;
+    display: inline-block;
+
+}
+
+.search-block .search-input, .search-block .search-submit{
+    width: 100%;
+    margin: 25px auto;
+}
+
+.search-input input.search-input-field {
+    height: 26px;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 26px;
+    border: 1px solid #b9b9b9;
+    margin: auto;
+    width: 100%;
+}
+
+.search-submit input[type=submit] {
+    height: 36px;
+    border-radius: 4px;
+    font-size: 26px;
+    border: 1px solid #b9b9b9;
+    margin: auto;
+    width: 200px;
+    background-color: #ebebeb;
+    display: block;
+}
+
+.search-block-inline .search-submit input[type=submit] {
+    width: 100px;
+}
