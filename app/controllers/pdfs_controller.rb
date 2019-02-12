@@ -15,8 +15,8 @@ class PdfsController < ApplicationController
     respond_to do |format|
       format.zip do
         @contributors = GithubAPI::Contributors.get_top_contributors(params[:url])
-        data = AwardZip::generate_zip(@contributors)
-        send_data(data, :type => 'application/zip', :filename => "test_dec_page.zip")
+        data = AwardZip.generate_zip(@contributors)
+        send_data(data, type: 'application/zip', filename:  "awards.zip")
       end
     end
   end
